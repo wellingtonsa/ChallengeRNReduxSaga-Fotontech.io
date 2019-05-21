@@ -3,10 +3,10 @@ import { View } from 'react-native';
 
 import Categories from '../components/Categories';
 import TopList from '../components/TopList';
-const HomeView = () => (
+const HomeView = (props) => (
     <View>
-        <Categories/>
-        <TopList/>
+        <Categories navigation={props.navigation}/>
+        <TopList navigation={props.navigation}/>
     </View>
 );
 

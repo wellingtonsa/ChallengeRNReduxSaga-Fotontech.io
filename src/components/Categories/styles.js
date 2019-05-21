@@ -13,6 +13,7 @@ export const Category = styled.TouchableOpacity`
     align-items: center;
     width: 60px;
     height: 60px;
+
 `;
 
 export const CategoryText = styled.Text`

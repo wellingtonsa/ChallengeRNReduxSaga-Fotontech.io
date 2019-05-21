@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { View } from 'react-native';
 
- import { Container, Category, CategoryText } from './styles';
+import { Container, Category, CategoryText } from './styles';
+
 
 export default class Categories extends Component {
 
+  constructor(props){
+    super(props);
+  }
+  
   state = {
     categories : [
 
@@ -31,13 +36,16 @@ export default class Categories extends Component {
       }
     ]
   }
+  handleList = () => {
+    this.props.navigation.push('List');
+  }
 
   render() {
     const { categories } = this.state;
     return (
     <Container>
         { categories.map(category => (
-          <Category key={category.id}>
+          <Category key={category.id} onPress={this.handleList}>
             <Icon name={category.icon} size={20} color="#3D3D3D"/>
             <CategoryText>{category.title}</CategoryText>
           </Category>
