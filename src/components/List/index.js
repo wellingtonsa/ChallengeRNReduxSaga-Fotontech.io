@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
-import Header from '../Header';
 
 import { Container, Preview, Thumbnail, Title } from './styles';
 
@@ -77,14 +76,12 @@ export default class List extends Component {
     onPress={() => this.showDetails(item)}>
       <Thumbnail source={{uri: item.tumbnail}}/>
       <Title>{item.title}</Title>
-    </Preview>
-  )
+    </Preview>)
 
 
   render() {
     return (
     <Container>
-      <Header/>
       <FlatList
         data={this.state.books}
         keyExtractor={book => book.id.toString()}
